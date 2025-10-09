@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0%" stop-color="#0b2540" />
+      <stop offset="100%" stop-color="#092033" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#g)" />
+  <g fill="#ffffff" opacity="0.06">
+    <rect x="60" y="60" width="1080" height="555" rx="20" />
+  </g>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#9FB4D8" font-family="Arial, Helvetica, sans-serif" font-size="36">Project Image Placeholder</text>
+</svg>
