@@ -99,7 +99,7 @@ export const PROJECTS = [
     name: "My Portfolio Website",
     description: "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS to showcase my skills, projects, and contact information. Features smooth animations with Framer Motion, dark/light theme switching, interactive skill categories, project showcases with hover effects, and a clean professional design optimized for performance and user experience.",
     image: portfolio,
-    githubLink: "https://github.com/Makinthan2001/ProdTrack",
+    githubLink: "https://github.com/Makinthan2001/My-Portfolio",
     viewDemo: "https://www.linkedin.com/posts/s-makinthan-0a694931b_webdevelopment-fullstackdevelopment-reactjs-activity-7328680056484954113-O1z9?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
@@ -109,7 +109,7 @@ export const PROJECTS = [
     description: "GearSphere(Academic project) is an advanced PC parts marketplace offering role-based user management, intelligent budget-driven PC builder tool, automated PC building recommendations, complete shopping experience, professional technician services, and comprehensive order tracking system developed with React.js frontend and PHP-MySQL backend",
     image: gearsphere,
     githubLink: "https://github.com/Makinthan2001/Gearsphere-FrontEnd",
-    viewDemo: "https://www.linkedin.com/posts/s-makinthan-0a694931b_webdevelopment-fullstackdevelopment-reactjs-activity-7328680056484954113-O1z9?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+    viewDemo: "https://www.linkedin.com/posts/s-makinthan-0a694931b_gearsphere-academicproject-webdevelopment-activity-7382417250743480320-HcC4?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
     tech: ["PHP","React.js", "MySQL", "Bootstrap"],
   },
   {

@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiCode, FiServer, FiDatabase, FiTool } from 'react-icons/fi';
 import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
+import FloatingIcons from './FloatingIcons';
+import ClientOnly from './ClientOnly';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -44,18 +46,31 @@ const Skills = () => {
 
   return (
     <motion.section
-      className={`relative w-full min-h-screen transition-colors duration-300 pt-10 pb-12 sm:pb-16 md:pb-20 ${
-        theme === 'dark' ? 'bg-gray-900' : 'bg-white'
-      }`}
+      className={`relative w-full min-h-screen transition-colors duration-300 pt-10 pb-12 sm:pb-16 md:pb-20 overflow-hidden bg-transparent`}
       id="skills"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Animated background effects */}
+      {/* Floating Icons Background */}
+      <ClientOnly fallback={
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div 
+            className={`absolute inset-0 ${
+              theme === 'dark'
+                ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]'
+                : 'bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]'
+            }`}
+          />
+        </div>
+      }>
+        <FloatingIcons theme={theme} />
+      </ClientOnly>
+
+      {/* Animated background effects - same as About section */}
       <motion.div 
-        className="absolute inset-0 overflow-hidden"
+        className="absolute inset-0 overflow-hidden z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.1 }}
@@ -70,7 +85,7 @@ const Skills = () => {
       </motion.div>
 
       {/* Content Container */}
-      <div className={`relative pl-2 pr-6 sm:pl-4 sm:pr-8 lg:pl-6 lg:pr-12 pb-16 transition-colors duration-300 ${
+      <div className={`relative z-20 pl-2 pr-6 sm:pl-4 sm:pr-8 lg:pl-6 lg:pr-12 pb-16 transition-colors duration-300 ${
         theme === 'dark' ? 'text-gray-100' : 'text-gray-800'
       }`}>
 
@@ -128,10 +143,10 @@ const Skills = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            <motion.div className={`sticky top-6 rounded-2xl p-6 backdrop-blur-md border transition-all duration-300 ${
+            <motion.div className={`sticky top-6 rounded-2xl p-6 backdrop-blur-lg border transition-all duration-300 shadow-xl ${
               theme === 'dark' 
-                ? 'bg-gray-800/50 border-gray-700/50' 
-                : 'bg-white/50 border-gray-200/50'
+                ? 'bg-gray-800/30 border-gray-700/30' 
+                : 'bg-white/30 border-gray-200/30'
             }`}>
               <h3 className="text-lg font-semibold mb-4 text-center">
                 <span className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
@@ -226,10 +241,10 @@ const Skills = () => {
                 className="space-y-6"
               >
                 {/* Category Header */}
-                <div className={`rounded-2xl p-6 backdrop-blur-md border transition-all duration-300 ${
+                <div className={`rounded-2xl p-6 backdrop-blur-lg border transition-all duration-300 shadow-xl ${
                   theme === 'dark' 
-                    ? 'bg-gray-800/50 border-gray-700/50' 
-                    : 'bg-white/50 border-gray-200/50'
+                    ? 'bg-gray-800/30 border-gray-700/30' 
+                    : 'bg-white/30 border-gray-200/30'
                 }`}>
                   <div className="flex items-center gap-4 mb-4">
                     <div className={`p-3 rounded-xl bg-gradient-to-r ${categories[active].color}`}>
@@ -266,13 +281,13 @@ const Skills = () => {
                       transition={{ delay: index * 0.05 }}
                       onHoverStart={() => setHoveredSkill(index)}
                       onHoverEnd={() => setHoveredSkill(null)}
-                      className={`relative group card-3d shadow-3d shadow-3d-hover p-3 sm:p-4 rounded-lg backdrop-blur-sm transition-all duration-500
-                        border transform-gpu cursor-pointer overflow-hidden
+                      className={`relative group card-3d shadow-3d shadow-3d-hover p-3 sm:p-4 rounded-lg backdrop-blur-lg transition-all duration-500
+                        border transform-gpu cursor-pointer overflow-hidden shadow-lg
                         ${hoveredSkill === index ? 'shadow-lg shadow-blue-500/20 border-blue-300/50 scale-105' : ''}
                         ${
                           theme === 'dark'
-                            ? 'bg-gray-800/90 border-gray-600/50 hover:bg-gray-700/90'
-                            : 'bg-white/90 border-gray-200/50 hover:bg-gray-50/90'
+                            ? 'bg-gray-800/40 border-gray-600/30 hover:bg-gray-700/50'
+                            : 'bg-white/40 border-gray-200/30 hover:bg-gray-50/50'
                         }`}
                       style={{
                         transformStyle: 'preserve-3d',
