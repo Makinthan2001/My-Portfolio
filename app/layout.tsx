@@ -17,19 +17,20 @@ const geistMono = Geist_Mono({
 const playfair = Playfair_Display({
   variable: "--font-heading",
   subsets: ["latin"],
-  display: 'swap',
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Makinthan - Software Developer",
-  description: "Portfolio website of Makinthan - Software Developer showcasing projects, skills, and experience in modern web development.",
+  description:
+    "Portfolio website of Makinthan - Software Developer showcasing projects, skills, and experience in modern web development.",
   icons: {
     icon: [
-      { url: '/favicon.png', sizes: '32x32', type: 'image/png' },
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
-    shortcut: '/favicon.png',
-    apple: '/apple-touch-icon.png',
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -39,10 +40,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`} suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable}`}
+      suppressHydrationWarning
+    >
       <head>
+        {/* Fallbacks for broader browser compatibility and theme color for mobile */}
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <meta
+          name="theme-color"
+          content="#0f172a"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="theme-color"
+          content="#ffffff"
+          media="(prefers-color-scheme: light)"
+        />
         <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link
+          rel="apple-touch-icon"
+          href="/apple-touch-icon.png"
+          sizes="180x180"
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -111,9 +132,7 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased theme-loading">
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );
