@@ -81,21 +81,24 @@ const skillIcons = [
 ];
 
 interface FloatingIconProps {
-  icon: typeof skillIcons[0];
+  icon: (typeof skillIcons)[0];
   index: number;
   containerWidth: number;
   containerHeight: number;
 }
 
-const FloatingIcon: React.FC<FloatingIconProps> = ({ 
-  icon, 
-  index, 
-  containerWidth, 
+const FloatingIcon: React.FC<FloatingIconProps> = ({
+  icon,
+  index,
+  containerWidth,
   containerHeight,
 }) => {
   // Use seeded random functions for consistent results
   const randomX = createSeededRandomX(index * 1000, containerWidth - icon.size);
-  const randomY = createSeededRandomY(index * 2000, containerHeight - icon.size);
+  const randomY = createSeededRandomY(
+    index * 2000,
+    containerHeight - icon.size
+  );
   const getDuration = createSeededDuration(index * 3000);
   const getDelay = createSeededDelay(index * 4000);
 
@@ -125,8 +128,8 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({
         scale: 0.8,
       }}
       animate={{
-        x: path.map(p => p.x),
-        y: path.map(p => p.y),
+        x: path.map((p) => p.x),
+        y: path.map((p) => p.y),
         opacity: [0, 0.7, 0.9, 0.6, 0.8, 0.7, 0],
         scale: [0.8, 1, 0.9, 1.1, 0.95, 1, 0.8],
         rotate: [0, 15, -10, 20, -15, 10, 0],
@@ -140,7 +143,7 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({
         times: [0, 0.1, 0.3, 0.5, 0.7, 0.9, 1],
       }}
       style={{
-        filter: 'drop-shadow(0 4px 8px rgba(0,0,0,0.3))',
+        filter: "drop-shadow(0 4px 8px rgba(0,0,0,0.3))",
       }}
     >
       <motion.div
@@ -161,7 +164,7 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({
           height={icon.size}
           className="object-contain"
           style={{
-            filter: 'brightness(0.9) contrast(1.1)',
+            filter: "brightness(0.9) contrast(1.1)",
           }}
         />
       </motion.div>
@@ -170,13 +173,13 @@ const FloatingIcon: React.FC<FloatingIconProps> = ({
 };
 
 interface FloatingIconsProps {
-  theme?: 'light' | 'dark';
+  theme?: "light" | "dark";
 }
 
-const FloatingIcons: React.FC<FloatingIconsProps> = ({ theme = 'dark' }) => {
+const FloatingIcons: React.FC<FloatingIconsProps> = ({ theme = "dark" }) => {
   const [containerDimensions, setContainerDimensions] = useState({
     width: 1200,
-    height: 800
+    height: 800,
   });
 
   // Set container dimensions based on actual window size
@@ -184,20 +187,24 @@ const FloatingIcons: React.FC<FloatingIconsProps> = ({ theme = 'dark' }) => {
     const updateDimensions = () => {
       setContainerDimensions({
         width: Math.min(window.innerWidth, 1200),
-        height: Math.min(window.innerHeight, 800)
+        height: Math.min(window.innerHeight, 800),
       });
     };
 
     updateDimensions();
-    window.addEventListener('resize', updateDimensions);
+    window.addEventListener("resize", updateDimensions);
 
     return () => {
-      window.removeEventListener('resize', updateDimensions);
+      window.removeEventListener("resize", updateDimensions);
     };
   }, []);
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div
+      className={`absolute inset-0 overflow-hidden pointer-events-none ${
+        theme === "dark" ? "opacity-90" : "opacity-70"
+      }`}
+    >
       {/* Floating skill icons */}
       {skillIcons.map((icon, index) => (
         <FloatingIcon
