@@ -25,11 +25,7 @@ export const metadata: Metadata = {
   description:
     "Portfolio website of Makinthan - Software Developer showcasing projects, skills, and experience in modern web development.",
   icons: {
-    icon: [
-      { url: "/favicon.png", sizes: "32x32", type: "image/png" },
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
-    ],
-    shortcut: "/favicon.png",
+    icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
 };
