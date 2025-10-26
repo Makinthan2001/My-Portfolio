@@ -99,7 +99,7 @@ export const PROJECTS = [
     image: portfolio,
     githubLink: "https://github.com/Makinthan2001/My-Portfolio",
     viewDemo:
-      "https://www.linkedin.com/posts/s-makinthan-0a694931b_webdevelopment-fullstackdevelopment-reactjs-activity-7328680056484954113-O1z9?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+      "https://my-portfolio-eight-gold-74.vercel.app/",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   {
