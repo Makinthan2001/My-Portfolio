@@ -47,7 +47,6 @@ export default function RootLayout({
     >
       <head>
         {/* Fallbacks for broader browser compatibility and theme color for mobile */}
-        <link rel="shortcut icon" href="/favicon.ico" />
         <meta
           name="theme-color"
           content="#0f172a"
@@ -58,12 +57,7 @@ export default function RootLayout({
           content="#ffffff"
           media="(prefers-color-scheme: light)"
         />
-        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-touch-icon.png"
-          sizes="180x180"
-        />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -75,31 +69,18 @@ export default function RootLayout({
                   var shouldUseDark = theme === 'dark' || (!theme && systemPrefersDark);
                   
                   var html = document.documentElement;
-                  var body = document.body;
                   
                   if (shouldUseDark) {
                     html.classList.add('dark');
                     html.setAttribute('data-theme', 'dark');
-                    body.setAttribute('data-theme', 'dark');
-                    body.style.backgroundColor = '#0f172a';
-                    body.style.color = '#f1f5f9';
                   } else {
                     html.classList.remove('dark');
                     html.setAttribute('data-theme', 'light');
-                    body.setAttribute('data-theme', 'light');
-                    body.style.backgroundColor = '#ffffff';
-                    body.style.color = '#171717';
                   }
-                  
-                  // Add loading class to prevent transitions during hydration
-                  body.classList.add('theme-loading');
                 } catch (e) {
                   // Fallback to light theme
                   document.documentElement.classList.remove('dark');
                   document.documentElement.setAttribute('data-theme', 'light');
-                  document.body.setAttribute('data-theme', 'light');
-                  document.body.style.backgroundColor = '#ffffff';
-                  document.body.style.color = '#171717';
                 }
               })();
             `,
@@ -123,7 +104,9 @@ export default function RootLayout({
               }
               /* Prevent transitions during hydration */
               .theme-loading,
-              .theme-loading * {
+              .theme-loading *,
+              .theme-loading *:before,
+              .theme-loading *:after {
                 transition: none !important;
                 animation-duration: 0s !important;
               }

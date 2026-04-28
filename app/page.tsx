@@ -5,7 +5,7 @@ import About from '@/components/About'
 import Skills from '@/components/Skill'
 import EducationSection from '@/components/EducationSection'
 import Projects from '@/components/Projects'
-//import Experience from '@/components/Experience'
+import Experience from '@/components/Experience'
 import ContactForm from '@/components/ContactForm'
 import Footer from '@/components/Footer'
 
@@ -24,9 +24,9 @@ const page = () => {
          <Hero />
          <About />
          <Skills />
-  <Projects />
+         <Projects />
+         <Experience />
          <EducationSection />
-         {/* <Experience /> */}
          <ContactForm />
          <Footer />
        </main>

@@ -5,8 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FiCode, FiServer, FiDatabase, FiTool } from 'react-icons/fi';
 import Image from 'next/image';
 import { useTheme } from '@/contexts/ThemeContext';
-import FloatingIcons from './FloatingIcons';
-import ClientOnly from './ClientOnly';
+
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -53,20 +53,6 @@ const Skills = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
-      {/* Floating Icons Background */}
-      <ClientOnly fallback={
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div 
-            className={`absolute inset-0 ${
-              theme === 'dark'
-                ? 'bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.1),transparent_50%)]'
-                : 'bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]'
-            }`}
-          />
-        </div>
-      }>
-        <FloatingIcons theme={theme} />
-      </ClientOnly>
 
       {/* Animated background effects - same as About section */}
       <motion.div 

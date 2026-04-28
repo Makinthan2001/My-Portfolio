@@ -2,7 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FiMonitor } from "react-icons/fi";
-import { FaMobileAlt } from "react-icons/fa";
+import { FaMobileAlt, FaServer } from "react-icons/fa";
 import { useTheme } from "@/contexts/ThemeContext";
 
 const services = [
@@ -18,12 +18,12 @@ const services = [
     description: "Building cross-platform mobile solutions",
     color: "from-purple-500 to-pink-500",
   },
-  //   {
-  //     icon: <FaServer className="w-7 h-7" />,
-  //     title: "Website Hosting",
-  //     description: "Reliable and secure hosting services",
-  //     color: "from-orange-500 to-red-500"
-  //   },
+    {
+      icon: <FaServer className="w-7 h-7" />,
+      title: "Website Hosting",
+      description: "Deploying and managing web applications online",
+      color: "from-orange-500 to-red-500"
+    },
 ];
 
 // const stats = [
@@ -210,7 +210,7 @@ const About = () => {
                       {stat.icon}
                     </div>
                     <div className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
-                      {stat.number}
+                       {stat.number}
                       <span className="text-white">{stat.suffix}</span>
                     </div>
                     <p className="text-sm sm:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">

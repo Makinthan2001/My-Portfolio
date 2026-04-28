@@ -61,12 +61,6 @@ const ContactForm = () => {
             });
             setIsSending(true);
 
-            // Debug: Log the data being sent
-            console.log('Sending data:', formData);
-            console.log('Service ID:', process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID);
-            console.log('Template ID:', process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID);
-            console.log('Public Key:', process.env.NEXT_PUBLIC_EMAIL_API_ID);
-
             emailjs.send(
                 process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!, 
                 process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!, 
