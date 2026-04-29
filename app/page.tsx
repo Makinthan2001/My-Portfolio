@@ -16,7 +16,7 @@ const page = () => {
      <SkillsAnimation />
      
      {/* Main Content with left margin for sidebar */}
-     <div className='relative z-10 ml-0 md:ml-24 w-full max-w-full overflow-x-hidden'>
+     <div className='relative z-10 ml-0 md:ml-24 w-full md:w-[calc(100%-6rem)] overflow-x-hidden'>
        <Navbar />
        
        {/* Scrollable Content */}
@@ -25,7 +25,7 @@ const page = () => {
          <About />
          <Skills />
          <Projects />
-         <Experience />
+         {/* <Experience /> */}
          <EducationSection />
          <ContactForm />
          <Footer />

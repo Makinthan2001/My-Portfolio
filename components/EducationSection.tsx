@@ -53,7 +53,8 @@ const EducationSection = () => {
               className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 xs:mb-3 sm:mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: -15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
+              transition={{ duration: 0.4, delay: 0.15 }}
+              viewport={{ once: true }}
             >
               Education Journey
             </motion.h2>
@@ -61,7 +62,8 @@ const EducationSection = () => {
               className="w-12 xs:w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full mb-3 xs:mb-4 sm:mb-6"
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
+              transition={{ duration: 0.4, delay: 0.2 }}
+              viewport={{ once: true }}
             />
             <motion.p
               className={`text-xs xs:text-sm sm:text-base max-w-2xl mx-auto px-3 xs:px-4 transition-colors duration-300 ${
@@ -69,7 +71,8 @@ const EducationSection = () => {
               }`}
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              viewport={{ once: true }}
             >
               My academic journey and educational achievements that shaped my
               professional path

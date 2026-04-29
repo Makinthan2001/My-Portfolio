@@ -25,10 +25,16 @@ import typescriptIcon from "@/assets/typescript.png";
 import vscodeIcon from "@/assets/vscode.png";
 import figmaIcon from "@/assets/figma.png";
 import prodtrack from "@/assets/prodTrack.png";
-import exam from "@/assets/OnlineExamination.png";
+import projectFlow from "@/assets/projectFlow.png";
 import gearsphere from "@/assets/gearsphere.png";
-import savemycontact from "@/assets/SaveMyContact.png";
+import splitify from "@/assets/splitify.jpg";
 import portfolio from "@/assets/portfolio.png";
+import eventHub from "@/assets/eventHub.png";
+import springbootIcon from "@/assets/Spring_Boot.svg";
+import firebaseUrl from "@/assets/firebase.png";
+import firestoreIcon from "@/assets/firestore.svg";
+import postgresqlIcon from "@/assets/postgresql.png";
+import postmanIcon from "@/assets/postman.webp";
 
 import profileImage from "@/assets/hero-image.png"; // Add your profile image
 
@@ -57,11 +63,15 @@ export const skillsData = [
     { id: 12, name: "PHP", icon: phpIcon },
     { id: 13, name: "Laravel", icon: laravelIcon },
     { id: 15, name: "Django", icon: djangoIcon },
+    { id: 24, name: "Spring Boot", icon: springbootIcon },
+    { id: 25, name: "Firebase", icon: firebaseUrl },
   ],
   // Database Skills
   [
     { id: 18, name: "MySQL", icon: mysqlIcon },
     { id: 19, name: "MongoDB", icon: mongodbIcon },
+    { id: 26, name: "PostgreSQL", icon: postgresqlIcon },
+    { id: 27, name: "Firestore", icon: firestoreIcon },
   ],
   // Tools & Others
   [
@@ -72,6 +82,7 @@ export const skillsData = [
     { id: 14, name: "Python", icon: pythonIcon },
     { id: 16, name: "Java", icon: javaIcon },
     { id: 17, name: "C", icon: cIcon },
+    { id: 28, name: "Postman", icon: postmanIcon },
   ],
 ];
 
@@ -86,7 +97,7 @@ export const NAVIGATION_LINKS = [
 
 export const HERO = {
   name: "Makinthan",
-  greet: "Software Developer",
+  greet: "Full Stack Developer",
   description: "",
 };
 
@@ -115,7 +126,40 @@ export const PROJECTS = [
   },
   {
     id: 3,
-    name: "Portfolio Website",
+    name: "Splitify",
+    description:
+      "Splitify was built to solve comrnon problems in shared spending, like unclear balances and manual calculations, It provides a simple and transparent way for users to manage group expenses, reduce disputes, and settle payments efficiently.",
+    image: splitify,
+    githubLink: "https://github.com/Makinthan2001/splitify.git",
+    viewDemo:
+      "https://www.linkedin.com/posts/s-makinthan-0a694931b_reactnative-expo-firebase-ugcPost-7455275515625623552-x163?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+    tech: ["React Native", "Expo", "Firebase", "TypeScript"],
+  },
+  {
+    id: 4,
+    name: "ProjectFlow",
+    description:
+      "ProjectFlow is a simple yet powerful project management platform designed for teams of all sizes. It offers real-time collaboration. flexible workflows. and clear insights to tum tasks into organized, efficient projects.",
+    image: projectFlow,
+    githubLink: "https://github.com/Makinthan2001/Project-Management.git",
+    viewDemo:
+      "https://project-management-chi-ten.vercel.app",
+    tech: ["React", "Tailwind CSS", "PostgreSQL", "Express.js", "Clerk"],
+  },
+  {
+    id: 5,
+    name: "EventHub",
+    description:
+      "EventHub is a lightweight, extensible platform for managing events and ticketing. It offers clear APIs, modular design, and easy deployment with room to scale and add features.",
+    image: eventHub,
+    githubLink: "https://github.com/Makinthan2001/EventHub_Backend.git",
+    viewDemo:
+      "https://www.linkedin.com/posts/s-makinthan-0a694931b_projectflow-reactjs-tailwindcss-activity-7448568009467521026-W1uS?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+    tech: ["React", "TypeScript", "MySQL", "Django"],
+  },
+  {
+    id: 6,
+    name: "ProdTrack",
     description:
       "ProdTrack is a web-based product inventory management system built with React frontend and PHP backend, enabling admin to add, update, delete, and categorize products with image uploads.",
     image: prodtrack,
@@ -123,28 +167,6 @@ export const PROJECTS = [
     viewDemo:
       "https://www.linkedin.com/posts/s-makinthan-0a694931b_webdevelopment-fullstackdevelopment-reactjs-activity-7328680056484954113-O1z9?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
     tech: ["PHP", "React.js", "MySQL", "Bootstrap"],
-  },
-  {
-    id: 4,
-    name: "Online Examination System",
-    description:
-      "A PHP-based online examination system featuring user authentication, exam creation, question management, result tracking, and role-based access control for administrators and students.",
-    image: exam,
-    githubLink: "https://github.com/Makinthan2001/WAD-mini-project",
-    viewDemo:
-      "https://github.com/Makinthan2001/WAD-mini-project/blob/main/README.md",
-    tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
-  },
-  {
-    id: 5,
-    name: "SaveMyContact",
-    description:
-      "SaveMyContact is a secure web-based contact management application built with PHP and MySQL. Users can register, login, and manage their personal contacts with add, view, search, and delete functionality.",
-    image: savemycontact,
-    githubLink: "https://github.com/Makinthan2001/SaveMyContact",
-    viewDemo:
-      "https://github.com/Makinthan2001/SaveMyContact/blob/main/README.md",
-    tech: ["PHP", "MySQL", "HTML", "CSS", "JavaScript", "Bootstrap"],
   },
   // Add more projects here
 ];

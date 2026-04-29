@@ -177,7 +177,7 @@ const Hero = () => {
 
   return (
     <section
-      className={`relative w-full min-h-screen transition-colors duration-300 px-4 sm:px-6 md:px-12 lg:px-24 xl:px-32 2xl:px-40 py-24 overflow-hidden flex items-center justify-center
+      className={`relative w-full min-h-screen transition-colors duration-300 overflow-hidden flex items-center justify-center
         text-gray-800 dark:text-gray-100 bg-transparent`}
       id="hero"
     >
@@ -207,14 +207,14 @@ const Hero = () => {
       </div>
 
       <div
-        className="relative container mx-auto flex flex-col md:flex-row items-center gap-8 sm:gap-12 md:gap-16"
+        className="relative w-full max-w-4xl flex flex-col items-center justify-center text-center px-4"
         style={{ zIndex: 10 }}
       >
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="w-full md:w-1/2 text-center md:text-left"
+          className="w-full"
         >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -223,23 +223,24 @@ const Hero = () => {
             className="mb-6 sm:mb-8"
           >
             {/* Main greeting heading now uses CSS var foreground for consistent theming */}
-            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl font-bold mb-4 sm:mb-6 text-[var(--foreground)] tracking-tight">
+            <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 sm:mb-6 text-[var(--foreground)] tracking-tight">
               Hello <span className="text-blue-500">.</span>
             </h1>
 
-            <div className="relative inline-block md:block pl-6 mb-4 sm:mb-6">
-              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-6 h-[2px] bg-blue-500"></div>
-              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--foreground)]/90 tracking-tight flex items-center gap-2">
+            <div className="relative inline-block mb-4 sm:mb-6">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-semibold text-[var(--foreground)]/90 tracking-tight flex items-center justify-center gap-4">
+                <div className="w-8 h-[2px] bg-blue-500"></div>
                 I&apos;m {HERO.name}
+                <div className="w-8 h-[2px] bg-blue-500"></div>
               </h2>
             </div>
 
-            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-wide mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
+            <h3 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide mb-6 sm:mb-8 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">
               {HERO.greet}
             </h3>
 
             <p
-              className={`text-lg max-w-2xl mb-8 transition-colors duration-300 ${
+              className={`text-lg sm:text-xl max-w-2xl mx-auto mb-8 transition-colors duration-300 ${
                 theme === "dark" ? "text-gray-300" : "text-gray-700"
               }`}
             >
@@ -249,7 +250,7 @@ const Hero = () => {
 
           {/* Social Media Links */}
           <motion.div
-            className="flex items-center justify-center md:justify-start gap-4 sm:gap-6 mb-8 sm:mb-10"
+            className="flex items-center justify-center gap-4 sm:gap-6 mb-8 sm:mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -278,7 +279,7 @@ const Hero = () => {
           </motion.div>
 
           <motion.div
-            className="flex flex-wrap justify-center md:justify-start gap-3 sm:gap-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -297,8 +298,8 @@ const Hero = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="/resume.pdf"
-              download="Resume.pdf"
+              href="/Makinthan.pdf"
+              download="Makinthan.pdf"
               className={`group flex items-center gap-2 px-6 sm:px-8 py-3 border border-blue-500 rounded-full text-sm sm:text-base font-medium transition-all duration-300 ${
                 theme === "dark"
                   ? "text-blue-400 hover:bg-blue-400 hover:text-gray-900"
@@ -310,32 +311,8 @@ const Hero = () => {
             </motion.a>
           </motion.div>
         </motion.div>
-
-        {/* Profile Image Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="relative w-full md:w-1/2 flex justify-center px-4 sm:px-6 md:px-0"
-        >
-          <div className="relative w-[350px] sm:w-[420px] md:w-[480px] lg:w-[520px]">
-            {/* Just the Image — No Card or Shadow */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="relative w-full h-auto"
-            >
-              <Image
-                src={cardimg}
-                alt="Madhan - Software Developer"
-                className="w-full h-auto object-contain"
-                priority
-              />
-            </motion.div>
-          </div>
-        </motion.div>
       </div>
+
     </section>
   );
 };

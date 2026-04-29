@@ -51,14 +51,16 @@ const Projects = () => {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16"
         >
           <motion.h2
             className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
           >
             Featured Projects
           </motion.h2>
@@ -66,20 +68,21 @@ const Projects = () => {
             className="w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            viewport={{ once: true }}
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-7xl mx-auto px-4 sm:px-6">
           {(PROJECTS as Project[]).map((project, index) => (
             <motion.div
               key={`${project.id}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.15 }}
               whileHover={{ y: -5 }}
               viewport={{ once: true, amount: 0.3 }}
-              className={`group rounded-xl sm:rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border flex flex-col relative ${
+              className={`group rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 border flex flex-col relative ${
                 theme === "dark"
                   ? "bg-gray-800/90 border-gray-700/50 hover:border-violet-400/70 hover:shadow-violet-500/20"
                   : "bg-gradient-to-br from-pink-50 via-violet-50 to-purple-50 border-pink-200/50 hover:border-violet-400/70 hover:shadow-violet-500/20"
@@ -92,7 +95,7 @@ const Projects = () => {
 
               {/* Image Container */}
               <motion.div
-                className="relative aspect-[16/9] overflow-hidden m-4 rounded-lg z-10"
+                className="relative aspect-video overflow-hidden m-3 rounded-lg z-10"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.4 }}
               >
@@ -115,12 +118,12 @@ const Projects = () => {
               </motion.div>
 
               {/* Content Container */}
-              <div className="px-6 pb-6 sm:px-8 sm:pb-8 space-y-4 flex-1 flex flex-col relative z-10">
+              <div className="px-4 pb-4 sm:px-5 sm:pb-5 space-y-3 flex-1 flex flex-col relative z-10">
                 <motion.h3
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.2 }}
-                  className={`text-xl sm:text-2xl font-semibold ${
+                  className={`text-lg sm:text-xl font-semibold ${
                     theme === "dark" ? "text-white" : "text-gray-900"
                   }`}
                 >
@@ -131,7 +134,7 @@ const Projects = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.3 }}
-                  className={`text-sm sm:text-base flex-grow ${
+                  className={`text-xs sm:text-sm flex-grow leading-relaxed ${
                     theme === "dark" ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
@@ -143,23 +146,23 @@ const Projects = () => {
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.3, delay: 0.35 }}
-                  className="pt-2"
+                  className="pt-1"
                 >
                   <h4
-                    className={`text-xs sm:text-sm font-medium mb-3 ${
+                    className={`text-[10px] sm:text-xs font-medium mb-2 ${
                       theme === "dark" ? "text-gray-400" : "text-gray-600"
                     }`}
                   >
                     Technologies Used
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-1.5">
                     {project.tech.map((tech: string, index: number) => (
                       <motion.span
                         key={index}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.2, delay: index * 0.1 }}
-                        className={`px-3 py-1.5 text-xs font-medium rounded-full transition-all duration-300 hover:scale-105 bg-gradient-to-r from-pink-100 to-violet-100 text-violet-800 border border-pink-200/50 hover:border-violet-300 hover:from-pink-200 hover:to-violet-200`}
+                        className={`px-2 py-1 text-[10px] font-medium rounded-full transition-all duration-300 hover:scale-105 bg-gradient-to-r from-pink-100 to-violet-100 text-violet-800 border border-pink-200/50 hover:border-violet-300 hover:from-pink-200 hover:to-violet-200`}
                       >
                         {tech}
                       </motion.span>
@@ -171,7 +174,7 @@ const Projects = () => {
                   initial={{ opacity: 0, y: 10 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3, delay: 0.4 }}
-                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-4"
+                  className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 pt-2"
                 >
                   <motion.a
                     href={project.githubLink}
@@ -179,11 +182,11 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 group bg-gradient-to-r from-pink-100 to-violet-100 text-violet-800 border border-pink-200/50 hover:border-violet-300 hover:from-pink-200 hover:to-violet-200 hover:shadow-lg hover:shadow-violet-200/50`}
+                    className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 group bg-gradient-to-r from-pink-100 to-violet-100 text-violet-800 border border-pink-200/50 hover:border-violet-300 hover:from-pink-200 hover:to-violet-200 hover:shadow-lg hover:shadow-violet-200/50`}
                   >
-                    <FiGithub className="text-lg group-hover:rotate-12 transition-transform duration-300" />
-                    View on GitHub
-                    <MdArrowOutward className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
+                    <FiGithub className="text-base group-hover:rotate-12 transition-transform duration-300" />
+                    GitHub
+                    <MdArrowOutward className="text-base group-hover:translate-x-1 transition-transform duration-300" />
                   </motion.a>
                   <motion.a
                     href={project.viewDemo}
@@ -191,11 +194,11 @@ const Projects = () => {
                     rel="noopener noreferrer"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className={`flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 group bg-gradient-to-r from-violet-500 to-pink-500 text-white border border-violet-400 hover:from-violet-600 hover:to-pink-600 hover:shadow-lg hover:shadow-violet-300/50`}
+                    className={`flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-medium transition-all duration-300 group bg-gradient-to-r from-violet-500 to-pink-500 text-white border border-violet-400 hover:from-violet-600 hover:to-pink-600 hover:shadow-lg hover:shadow-violet-300/50`}
                   >
-                    <FiExternalLink className="text-lg group-hover:rotate-12 transition-transform duration-300" />
-                    View Project
-                    <MdArrowOutward className="text-lg group-hover:translate-x-1 transition-transform duration-300" />
+                    <FiExternalLink className="text-base group-hover:rotate-12 transition-transform duration-300" />
+                    Demo
+                    <MdArrowOutward className="text-base group-hover:translate-x-1 transition-transform duration-300" />
                   </motion.a>
                 </motion.div>
               </div>

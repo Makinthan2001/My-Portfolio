@@ -93,7 +93,8 @@ const ContactForm = () => {
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
                 className='max-w-4xl mx-auto px-2 sm:px-4'
             >
                 <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent`}>
@@ -108,7 +109,8 @@ const ContactForm = () => {
                 <motion.form
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
                     onSubmit={handleSubmit}
                     className='space-y-6'
                 >

@@ -50,7 +50,7 @@ const Skills = () => {
       id="skills"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.2 }}
     >
 
@@ -59,7 +59,8 @@ const Skills = () => {
         className="absolute inset-0 overflow-hidden z-10"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.1 }}
+        transition={{ duration: 0.6, delay: 0.1 }}
+        viewport={{ once: true }}
       >
         <div
           className={`absolute inset-0 ${
@@ -78,7 +79,8 @@ const Skills = () => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
         className="relative max-w-6xl mx-auto perspective-1000 px-2 sm:px-4"
       >
         {/* Section Header */}
@@ -86,14 +88,15 @@ const Skills = () => {
           className="text-center mb-6"
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
           viewport={{ once: true }}
         >
           <motion.h2 
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             Technical Skills
           </motion.h2>
@@ -101,7 +104,8 @@ const Skills = () => {
             className="w-16 sm:w-20 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto rounded-full mb-3 sm:mb-6"
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            viewport={{ once: true }}
           />
           <motion.p
             className={`text-sm sm:text-base max-w-2xl mx-auto px-3 sm:px-4 transition-colors duration-300 ${
@@ -109,7 +113,8 @@ const Skills = () => {
             }`}
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             A showcase of my technical expertise and the tools I use to build amazing web applications
           </motion.p>
@@ -120,14 +125,16 @@ const Skills = () => {
           className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-start justify-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
+          viewport={{ once: true }}
         >
           {/* Left Sidebar - Categories */}
           <motion.div 
             className="lg:w-80 lg:flex-shrink-0"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
+            viewport={{ once: true }}
           >
             <motion.div className={`sticky top-6 rounded-2xl p-6 backdrop-blur-lg border transition-all duration-300 shadow-xl ${
               theme === 'dark' 
@@ -146,7 +153,8 @@ const Skills = () => {
                     key={category.id}
                     initial={{ opacity: 0, x: -15 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.4, delay: 0.8 + (index * 0.05) }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: 0.5 + (index * 0.05) }}
                     whileHover={{ 
                       scale: 1.02, 
                       x: 5
@@ -214,7 +222,8 @@ const Skills = () => {
             className="flex-1 lg:max-w-4xl lg:mx-auto"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.7 }}
+            transition={{ duration: 0.4, delay: 0.4 }}
+            viewport={{ once: true }}
           >
             <AnimatePresence mode="wait">
               <motion.div

@@ -25,7 +25,8 @@ const Footer = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.6 }}
+                    viewport={{ once: true }}
                     className='relative z-10 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'
                 >
                     {/* Contact Info */}
@@ -70,8 +71,9 @@ const Footer = () => {
                                     whileHover={{ scale: 1.2, rotate: 8 }}
                                     transition={{
                                         duration: 0.2,
-                                        delay: index * 0.1
+                                        delay: index * 0.05
                                     }}
+                                    viewport={{ once: true }}
                                     href={link.href}
                                     key={index}
                                     target='_blank'
@@ -93,7 +95,8 @@ const Footer = () => {
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
-                            transition={{ duration: 0.8 }}
+                            transition={{ duration: 0.6 }}
+                            viewport={{ once: true }}
                         >
                         <h2 className={`text-2xl sm:text-3xl mb-2 font-serif transition-colors duration-300 ${
                             theme === 'dark' ? 'text-white' : 'text-gray-900'
@@ -114,7 +117,8 @@ const Footer = () => {
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    viewport={{ once: true }}
                     className={`relative z-10 mt-12 pt-8 border-t transition-colors duration-300 ${
                         theme === 'dark' ? 'border-gray-800' : 'border-gray-200'
                     }`}
