@@ -154,7 +154,7 @@ export const PROJECTS = [
     image: eventHub,
     githubLink: "https://github.com/Makinthan2001/EventHub_Backend.git",
     viewDemo:
-      "https://www.linkedin.com/posts/s-makinthan-0a694931b_projectflow-reactjs-tailwindcss-activity-7448568009467521026-W1uS?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+      "https://www.linkedin.com/posts/s-makinthan-0a694931b_eventhub-fullstackdevelopment-django-share-7455656181588713472-KsGz?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
     tech: ["React", "TypeScript", "MySQL", "Django"],
   },
   {
