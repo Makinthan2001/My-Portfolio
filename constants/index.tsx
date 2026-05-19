@@ -24,8 +24,8 @@ import mongodbIcon from "@/assets/mongoDB.png";
 import typescriptIcon from "@/assets/typescript.png";
 import vscodeIcon from "@/assets/vscode.png";
 import figmaIcon from "@/assets/figma.png";
-import prodtrack from "@/assets/prodTrack.png";
-import projectFlow from "@/assets/projectFlow.png";
+import aurapixels from "@/assets/auraPixels.jpg";
+import projectFlow from "@/assets/projectFlow.jpg";
 import gearsphere from "@/assets/gearsphere.png";
 import splitify from "@/assets/splitify.jpg";
 import portfolio from "@/assets/portfolio.png";
@@ -104,14 +104,14 @@ export const HERO = {
 export const PROJECTS = [
   {
     id: 1,
-    name: "My Portfolio Website",
+    name: "AuraPixels",
     description:
-      "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS to showcase my skills, projects, and contact information. Features smooth animations with Framer Motion, dark/light theme switching, interactive skill categories, project showcases with hover effects, and a clean professional design optimized for performance and user experience.",
-    image: portfolio,
-    githubLink: "https://github.com/Makinthan2001/My-Portfolio",
+      "AuraPixels is a modern AI wallpaper creation app designed to simplify how users generate, explore, and save beautiful wallpapers. It bridges creativity and convenience by giving users a seamless mobile experience for generating unique wallpapers from text prompts. The app removes the complexity of design tools and manual editing, making AI-powered wallpaper creation fast, simple, and accessible.",
+    image: aurapixels,
+    githubLink: "https://github.com/Makinthan2001/AuraPixels.git",
     viewDemo:
-      "https://my-portfolio-eight-gold-74.vercel.app/",
-    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      "https://www.linkedin.com/posts/s-makinthan-0a694931b_reactnative-expo-typescript-ugcPost-7462499935314169856-RlDn?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
+    tech: ["React Native", "Express.js", "PostgreSQL", "TypeScript"],
   },
   {
     id: 2,
@@ -159,14 +159,14 @@ export const PROJECTS = [
   },
   {
     id: 6,
-    name: "ProdTrack",
+    name: "My Portfolio Website",
     description:
-      "ProdTrack is a web-based product inventory management system built with React frontend and PHP backend, enabling admin to add, update, delete, and categorize products with image uploads.",
-    image: prodtrack,
-    githubLink: "https://github.com/Makinthan2001/ProdTrack",
+      "A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS to showcase my skills, projects, and contact information. Features smooth animations with Framer Motion, dark/light theme switching, interactive skill categories, project showcases with hover effects, and a clean professional design optimized for performance and user experience.",
+    image: portfolio,
+    githubLink: "https://github.com/Makinthan2001/My-Portfolio",
     viewDemo:
-      "https://www.linkedin.com/posts/s-makinthan-0a694931b_webdevelopment-fullstackdevelopment-reactjs-activity-7328680056484954113-O1z9?utm_source=share&utm_medium=member_android&rcm=ACoAAFEenT4B7Ldew3jDQwwbl-h0BK-Y2hfaRxQ",
-    tech: ["PHP", "React.js", "MySQL", "Bootstrap"],
+      "https://my-portfolio-eight-gold-74.vercel.app/",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
   // Add more projects here
 ];
